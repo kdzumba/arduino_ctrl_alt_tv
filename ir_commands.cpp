@@ -121,3 +121,11 @@ void open_dstv() {
   Serial.println("Sending NEC signal: address=0xBF00, command=0xFB");
   IrSender.sendNEC(0xBF00, 0xFB, 0);
 }
+
+void increase_channel() {
+  Serial.println("Increase channel");
+}
+
+void decrease_channel() {
+  Serial.println("Decrease channel");
+}

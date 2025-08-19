@@ -23,3 +23,9 @@ void connect_to_wifi() {
     Serial.println("Failed to connect to WiFi.");
   }
 }
+
+void create_apn() {
+  WiFi.softAP("ESP32_AP", "12345678");
+  Serial.println("Access Point Started");
+  Serial.println(WiFi.softAPIP());
+}
