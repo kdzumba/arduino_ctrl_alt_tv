@@ -20,6 +20,11 @@ std::map<std::string, void(*)()> key_to_signal_map = {
   {"CH_DOWN", decrease_channel},
   {"BACK", go_back},
   {"HOME", go_home},
+  {"NETFLIX", open_netflix},
+  {"SHOWMAX", open_showmax},
+  {"YOUTUBE", open_youtube},
+  {"PRIME", open_amazon_prime},
+  {"DSTV", open_dstv}
 };
 
 void init_routes() {
