@@ -18,7 +18,15 @@ void setup() {
   Serial.println("Ready to transmit and receive signals...");
 }
 
+// unsigned long lastToggle = 0;
+// const unsigned long interval = 7000; // 7 seconds
+
 void loop() {
+  // unsigned long now = millis();
+  //   if (now - lastToggle >= interval) {
+  //       toggle_tv_power();
+  //       lastToggle = now;
+  //   }
   handle_http_requests();
   handle_ir_signal();
 }

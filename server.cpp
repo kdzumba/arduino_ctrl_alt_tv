@@ -32,6 +32,11 @@ void init_routes() {
     }
   });
 
+  web_server.on("/toggle", [&web_server]() {
+    toggle_tv_power();
+    web_server.send(200, "text/plain", "Toggled TV power");
+  });
+
   web_server.begin();
 }
 

@@ -5,20 +5,14 @@ static IRsend* ir_sender = nullptr;
 static IRrecv* ir_receiver = nullptr;
 
 void init_ir(uint16_t tx_pin, uint16_t rx_pin) {
-  static IRsend sender(tx_pin);
-  static IRrecv receiver(rx_pin);
-
-  ir_sender = &sender;
-  ir_receiver = &receiver;
-
-  ir_sender -> begin(tx_pin);
-  ir_receiver -> begin(rx_pin, ENABLE_LED_FEEDBACK);
+  IrSender.begin(tx_pin);
+  IrReceiver.begin(rx_pin, ENABLE_LED_FEEDBACK);
 }
 
 void handle_ir_signal() {
-  if(ir_receiver && ir_receiver -> decode()) {
-    ir_receiver -> printIRResultShort(&Serial);
-    ir_receiver -> resume();
+  if(IrReceiver.decode()) {
+    IrReceiver.printIRResultShort(&Serial);
+    IrReceiver.resume();
   }
 }
 
